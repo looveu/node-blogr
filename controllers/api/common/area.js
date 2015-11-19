@@ -2,7 +2,7 @@
 
 var app = require('../../../index');
 var _ = require('lodash');
-var nm29DataBase = require('../../../models/nm29/index');
+var nm29DataBase = require('../../../models/blogr/index');
 var District = nm29DataBase.district;
 
 module.exports = function (router) {

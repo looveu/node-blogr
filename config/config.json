@@ -190,15 +190,15 @@
                 ]
             }
         },
-        "weixin": {
-            "enabled": true,
-            "priority": 111,
-            "route": "/api/wechat",
-            "module": {
-                "name": "path:./lib/middleware/wechat",
-                "arguments": []
-            }
-        },
+        // "weixin": {
+        //     "enabled": true,
+        //     "priority": 111,
+        //     "route": "/api/wechat",
+        //     "module": {
+        //         "name": "path:./lib/middleware/wechat",
+        //         "arguments": []
+        //     }
+        // },
         /**
          * 只有/api层面不使用csrf
          */
