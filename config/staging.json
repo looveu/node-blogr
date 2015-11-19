@@ -1,0 +1,210 @@
+{
+    "server": {
+        "port": 9001,
+        "name": "testServer"
+    },
+    "common": {
+        "city": "require:./config/common/city.json"
+    },
+    "mongodbs": {
+        "blogr": {
+            "uri": "mongodb://10.252.219.4:21168/blogr",
+            "user": "gtbadber",
+            "pass": "nm29.com-gameand.me"
+        }
+    },
+    "account": {
+        "utypes": {
+            "SUPERADMIN":1,
+            "ADMIN": 10,
+            "DEVELOPER": 39,
+            "PLANNER": 50,
+            "EDITOR": 60,
+            "VIP": 899,
+            "NORMAL": 999
+        }
+    },
+
+
+
+    "express": {
+        "view cache": false,
+        "view engine": "dust",
+        "views": "path:./public/templates"
+    },
+
+    
+    "view engines": {
+        "dust": {
+            "module": "makara",
+            "renderer": {
+                "method": "dust",
+                "arguments": [
+                    { "cache": true, "helpers": "config:dust.helpers" }
+                ]
+            }
+        }
+    },
+    
+    
+
+    "middleware": {
+        "session": {
+            "module": {
+                "name": "express-session",
+                "arguments": [
+                    {
+                        "key": "gm",
+                        "secret": "1p0ro7uk6gbo00uqfeji1jfrs00fp2v28lqiv800bb298udmas400tr5h12nkifo001v046nquk4k8001u0ur3uuaqrg00t1mh0vqqaso001f1k394mp74o00",
+                        "cookie": {
+                            "path": "/",
+                            "httpOnly": true,
+                            "maxAge": 3600000
+                        },
+                        "resave": false,
+                        "saveUninitialized": false
+                    }
+                ]
+            }
+        },
+
+
+        "devtools": {
+            "enabled": true,
+            "priority": 35,
+            "module": {
+                "name": "kraken-devtools",
+                "arguments": [
+                    "path:./public",
+                    "path:./.build",
+                    {
+                        
+                        
+                        "css": {
+                            "module": "kraken-devtools/plugins/less",
+                            "files": "/css/**/*.css"
+                        },
+                        
+                        "browserify": {
+                            "module": "kraken-devtools-browserify",
+                            "files": "/js/**/*.js"
+                        },
+                        
+                        "copier": {
+                            "module": "kraken-devtools/plugins/copier",
+                            "files": "**/*"
+                        }
+                    }
+                ]
+            }
+        },
+        "compress":{
+            "enabled": true,
+            "priority": 10,
+            "module": "compression"
+        },
+        "passport": {
+            "enabled": true,
+            "priority": 31,
+            "module": {
+                "name": "path:./lib/middleware/passport",
+                "arguments": [
+                ]
+            }
+        },
+        // "xml-parser": {
+        //     "enabled": true,
+        //     "priority": 31,
+        //     "module": {
+        //         "name": "path:./lib/middleware/xml-parser",
+        //         "arguments": [
+        //         ]
+        //     }
+        // },
+        "logger": {
+            "enabled": true,
+            "route": "/((?!api))*",
+            "priority": 101,
+            "module": {
+                "name": "path:./lib/middleware/bunyan",
+                "arguments": [
+                ]
+            }
+        },
+        "cors": {
+            "enabled": true,
+            "priority": 31,
+            "module": {
+                "name": "path:./lib/middleware/cors",
+                "arguments": [
+                    ["gameand.me","127.0.0.1:8809"],
+                    ["GET", "POST", "PUT"],
+                    ["Authorization", "Content-Type"]
+                ]
+            }
+        },
+        "serverInfo": {
+            "enabled": true,
+            "priority": 32,
+            "module": {
+                "name": "path:./lib/middleware/serverInfo",
+                "arguments": [
+                    "NewMoon",
+                    "1.2.6"
+                ]
+            }
+        },
+        "apiHelper": {
+            "enabled": true,
+            "priority": 10,
+            "module": {
+                "name": "path:./lib/nm29/apiHelper",
+                "arguments": []
+            }
+        },
+        "validator": {
+            "enabled": true,
+            "priority": 32,
+            "module": {
+                "name": "path:./lib/middleware/validator",
+                "arguments": []
+            }
+        },
+        "appsec": {
+            "module": {
+                "arguments": [
+                    {
+                        "xframe": "SAMEORIGIN",
+                        "p3p": false,
+                        "csp": false
+                    }
+                ]
+            }
+        },
+        /**
+         *  微信
+         */
+        // "weixin": {
+        //     "enabled": true,
+        //     "priority": 111,
+        //     "route": "/api/wechat",
+        //     "module": {
+        //         "name": "path:./lib/middleware/wechat",
+        //         "arguments": []
+        //     }
+        // },
+        /**
+         * 只有/api层面不使用csrf
+         */
+        "csrf": {
+            "enabled": true,
+            "priority": 111,
+            "route": "/((?!api))*",
+            "module": {
+                "name": "lusca",
+                "method": "csrf",
+                "arguments": [ {} ]
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+[{
+  "name"       : "gameandme-auth",
+  "script"     : "./server.js",
+  "instances"  : "1",
+  "log_date_format"  : "YYYY-MM-DD HH:mm:ss Z",
+  "error_file" : "./logs/tankgirl_error.log",
+  "out_file"   : "./logs/tankgirl_out.log",
+  "cron_restart"     : "30 5 * * *",
+  "merge_logs"       : true,
+  "exec_mode"  : "cluster_mode",
+  "env": {
+    "NODE_ENV": "staging"
+  }
+}]
