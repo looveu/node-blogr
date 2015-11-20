@@ -13,7 +13,9 @@
     },
     "mongodbs": {
         "blogr": {
-            "uri": "mongodb://10.252.219.4:21168/blogr"
+            "uri": "mongodb://127.0.0.1:21168/blogr",
+            "user": "gtbadber",
+            "pass": "nm29.com-gameand.me"
         }
     },
     "account": {
@@ -26,6 +28,10 @@
             "VIP": 899,
             "NORMAL": 999
         }
+    },
+    "i18n": {
+        "contentPath": "path:./locales",
+        "fallback": "zh-CN"
     },
     "view engines": {
         "js": {
@@ -130,16 +136,16 @@
         //         ]
         //     }
         // },
-        "logger": {
-            "enabled": true,
-            "route": "/((?!api))*",
-            "priority": 101,
-            "module": {
-                "name": "path:./lib/middleware/bunyan",
-                "arguments": [
-                ]
-            }
-        },
+        // "logger": {
+        //     "enabled": true,
+        //     "route": "/((?!api))*",
+        //     "priority": 101,
+        //     "module": {
+        //         "name": "path:./lib/middleware/bunyan",
+        //         "arguments": [
+        //         ]
+        //     }
+        // },
         "cors": {
             "enabled": true,
             "priority": 31,

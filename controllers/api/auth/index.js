@@ -8,7 +8,7 @@ var passport = require('passport');
 var blogrDataBase = require('../../../models/blogr');
 var Account = blogrDataBase.Account;
 var serverListModel = blogrDataBase.ServerList;
-var forgetPassword = blogrDataBase.ForgetPassword;
+var ForgetPassword = blogrDataBase.ForgetPassword;
 var authMiddle = require('../../../lib/middleware/auth');
 var nm29Crypto = require('../../../lib/nm29/crypto');
 var sendEmail = require('../../../lib/nm29/sendEmail');
@@ -94,14 +94,14 @@ module.exports = function (router) {
             if(!account){
                 return res.error('不存在的邮箱','不存在的邮箱.');
             }
-            forgetPassword.findOne({
+            ForgetPassword.findOne({
                 account_id: account._id
             }).exec(function(error, iForgot){
                 if(error){
                     return res.error(error,'找回密码失败请重试.');
                 }
                 if(!iForgot){
-                    iForgot = new forgetPassword({
+                    iForgot = new ForgetPassword({
                         account_id: account._id
                     });
                 }else{
@@ -133,7 +133,7 @@ module.exports = function (router) {
         if(!req.body.code || !req.body.password){
             return res.error('参数错误','重设密码失败,请稍候再试.');
         }
-        forgetPassword.findOne({
+        ForgetPassword.findOne({
             code: req.body.code.toUpperCase()
         }).exec(function (error, forgot) {
             if(error){

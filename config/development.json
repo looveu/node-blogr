@@ -31,7 +31,10 @@
         "views": "path:./public/templates"
     },
 
-    
+    "i18n": {
+        "contentPath": "path:./locales",
+        "fallback": "zh-CN"
+    },
     "view engines": {
         "dust": {
             "module": "makara",
@@ -118,15 +121,15 @@
         //         ]
         //     }
         // },
-        "logger": {
-            "enabled": true,
-            "priority": 101,
-            "module": {
-                "name": "path:./lib/middleware/bunyan",
-                "arguments": [
-                ]
-            }
-        },
+        // "logger": {
+        //     "enabled": true,
+        //     "priority": 101,
+        //     "module": {
+        //         "name": "path:./lib/middleware/bunyan",
+        //         "arguments": [
+        //         ]
+        //     }
+        // },
         "cors": {
             "enabled": true,
             "priority": 31,
