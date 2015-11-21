@@ -148,7 +148,7 @@
             "module": {
                 "name": "path:./lib/middleware/serverInfo",
                 "arguments": [
-                    "NewMoon",
+                    "SinoGemBidding",
                     "1.2.6"
                 ]
             }
