@@ -8,11 +8,11 @@ var mongoose = require('mongoose'),
     bcrypt = require('bcrypt'),
     SALT_WORK_FACTOR = 10,
     EventProxy = require('eventproxy'),
-    app=  require('../../index'),
+    // app=  require('../../index'),
     _ = require('lodash'),
     uuid = require('node-uuid');
 
-var utypeEnum = _.keys(app.kraken.get('account:utypes'));
+var utypeEnum = _.keys(require('../../config/account/utypes.json'));
 
 var Schema = mongoose.Schema;
 
@@ -129,7 +129,7 @@ accountSchema.methods.comparePassword = function (candidatePassword, cb) {
 // Remember Me implementation helper method
 accountSchema.methods.generateRandomToken = function() {
     var user = this,
-        chars = "-!abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+        chars = '-!abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890',
         token = (Date.now()).toString(36) + '_';
     for (var x = 0; x < 32; x++) {
         var i = Math.floor(Math.random() * 62);

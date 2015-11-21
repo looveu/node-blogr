@@ -1,3 +1,5 @@
+'use strict';
+
 var redis = require("redis");
 var Computecluster = require('compute-cluster');
 var path = require('path');

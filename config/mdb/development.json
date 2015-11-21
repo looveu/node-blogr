@@ -1,0 +1,7 @@
+{
+    "blogr": {
+        "uri": "mongodb://127.0.0.1:21168/blogr",
+        "user": "gtbadber",
+        "pass": "nm29.com-gameand.me"
+    }
+}

@@ -11,7 +11,7 @@ module.exports = function (router) {
 		res.ok(_.keys(city));
 	});
 	router.get('/city', function queryQuranChapterQuery(req, res) {
-		var city = app.kraken.get('common:city')
+		var city = app.kraken.get('common:city');
 		var rst = {};
 		if (req.query.province) {
 			rst = city[req.query.province];

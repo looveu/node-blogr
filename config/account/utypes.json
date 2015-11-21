@@ -1,0 +1,9 @@
+{
+	"SUPERADMIN": 1,
+	"ADMIN": 10,
+	"DEVELOPER": 39,
+	"PLANNER": 50,
+	"EDITOR": 60,
+	"VIP": 899,
+	"NORMAL": 999
+}

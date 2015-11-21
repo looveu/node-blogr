@@ -1,11 +1,19 @@
 'use strict';
 
-var app=  require('../../index');
+// var app=  require('../../index');
 var mongoose = require('mongoose');
 var timestamps = require('mongoose-timestamp');
 
 // 获取数据库连接配置
-var blogrDataBaseConfig = app.kraken.get('mongodbs:blogr');
+// var blogrDataBaseConfig = app.kraken.get('mongodbs:blogr');
+var blogrDataBaseConfigDev = require('../../config/mdb/development.json');
+var blogrDataBaseConfigPro = require('../../config/mdb/production.json');
+var blogrDataBaseConfig = {};
+if(process.env.NODE_ENV === 'production'){
+    blogrDataBaseConfig = blogrDataBaseConfigPro.blogr;
+}else{
+    blogrDataBaseConfig = blogrDataBaseConfigDev.blogr;
+}
 var blogrDataBaseOptions = {
     server: {poolSize: 20}
 };
