@@ -12,13 +12,13 @@ module.exports = new Schema({
 		unique: true
 	},
 	level: {
-		type: Number,
-		required: true,
-		unique: true
+		type: Number
 	},
 	belong: {
-		type: Schema.Types.ObjectId,
-		required: true,
-		unique: true
+		type: Schema.Types.ObjectId
+	},
+	sort: {
+		type: Number,
+		default: 1
 	}
 });

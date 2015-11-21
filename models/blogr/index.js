@@ -33,6 +33,12 @@ districtSchema.plugin(timestamps);
 var weatherSchema = require('./weather');
 weatherSchema.plugin(timestamps);
 
+var documentSchema = require('./document');
+documentSchema.plugin(timestamps);
+
+var categorySchema = require('./category');
+categorySchema.plugin(timestamps);
+
 
 
 
@@ -50,3 +56,7 @@ exports.ForgetPassword = blogrDataBase.model('ForgetPassword', ForgetPasswordSch
 exports.district = blogrDataBase.model('district', districtSchema);
 // 天气
 exports.weather = blogrDataBase.model('weather', weatherSchema);
+
+exports.document = blogrDataBase.model('document', documentSchema);
+
+exports.category = blogrDataBase.model('category', categorySchema);

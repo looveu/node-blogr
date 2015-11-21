@@ -1,0 +1,25 @@
+<div class="container-fluid" style="padding-bottom:20px;">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">添加文档</h1>
+		</div>
+		<!-- /.col-lg-12 -->
+	</div>
+	<!-- /.row -->
+	<div class="form-group">
+		<input type="text" class="form-control" id="title" ng-model="title" placeholder="文章标题">
+	</div>
+	<div class="form-group">
+		<select class="form-control" ng-model="cate" ng-options="cate.title for cate in cates track by cate._id">
+		</select>
+	</div>
+	<div class="form-group">
+		<div text-angular ng-model="docContent"></div>
+	</div>
+	<div class="form-group">
+		<input type="text" class="form-control" ng-model="tags" placeholder="标签">
+	</div>
+	<div class="form-group">
+		<button type="button" class="btn btn-primary btn-lg pull-right" ng-click="docSave()">保存</button>
+	</div>
+</div>

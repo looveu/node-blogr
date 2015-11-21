@@ -1,0 +1,27 @@
+<div class="container-fluid" style="padding-bottom:20px;">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">分类列表</h1>
+		</div>
+		<!-- /.col-lg-12 -->
+	</div>
+	<!-- /.row -->
+	<table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>名称</th>
+          <th>等级</th>
+          <th>所属</th>
+          <th>排序</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="cate in cates">
+          <th>{{cate.title}}</th>
+          <td>{{cate.level}}</td>
+          <td>{{cate.belong||'中钰招标'}}</td>
+          <td>{{cate.sort}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>

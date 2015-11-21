@@ -13,17 +13,17 @@ module.exports = new Schema({
 	},
 	category: {
 		type: String,
-		required: true,
-		unique: true
+		required: true
+	},
+	content: {
+		type: String,
+		required: true
 	},
 	tags: {
 		type: Array,
-		required: true,
-		unique: true
+		required: true
 	},
 	author: {
-		type: Schema.Types.ObjectId,
-		required: true,
-		unique: true
+		type: Schema.Types.ObjectId
 	}
 });

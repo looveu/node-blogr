@@ -106,7 +106,7 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              // 'scripts/controllers/main.js',
+              'scripts/controllers/main.js',
               'scripts/directives/timeline/timeline.js',
               'scripts/directives/notifications/notifications.js',
               'scripts/directives/chat/chat.js',
@@ -116,6 +116,56 @@ angular
           }
         }
       })
+      ////////////
+      
+      .state('dashboard.documentNew',{
+        url:'/document/new',
+        controller: 'NewDocumentCtr',
+        templateUrl:'views/pages/newDocument.html',
+        resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:[
+              'scripts/controllers/newDocument.js'
+              ]
+            })
+          }
+        }
+      })
+      .state('dashboard.categoryNew',{
+        url:'/category/new',
+        controller: 'NewCategoryCtr',
+        templateUrl:'views/pages/newCategory.html',
+        resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:[
+              'scripts/controllers/newCategory.js'
+              ]
+            })
+          }
+        }
+      })
+      .state('dashboard.categoryQuery',{
+        url:'/category/query',
+        controller: 'QueryCategoryCtr',
+        templateUrl:'views/pages/queryCategory.html',
+        resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:[
+              'scripts/controllers/queryCategory.js'
+              ]
+            })
+          }
+        }
+      })
+      
+      
+      ////
       .state('dashboard.form',{
         templateUrl:'views/form.html',
         url:'/form'
