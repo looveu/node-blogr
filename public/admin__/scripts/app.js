@@ -18,14 +18,22 @@ angular
   .config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider','$provide',function ($stateProvider,$urlRouterProvider,$ocLazyLoadProvider,$provide) {
     
     
-    $provide.decorator('taOptions', ['$delegate', function(taOptions){
+    $provide.decorator('taOptions', ['taRegisterTool','$delegate', function(taRegisterTool, taOptions){
            taOptions.toolbar = [
                 ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'pre', 'quote'],
                 ['bold', 'italics', 'underline', 'ul', 'ol', 'redo', 'undo', 'clear'],
                 ['justifyLeft','justifyCenter','justifyRight', 'justifyFull'],
                 ['html', 'insertImage', 'insertLink']
             ];
-          console.log(taOptions);
+            
+            
+            taRegisterTool('customInsertImage', {
+                    iconclass: "fa fa-picture-o",
+                    action: function (deferred, restoreSelection) {
+                      this.$editor().wrapSelection('insertImage','http://b.36krcnd.com/nil_class/378e2810-9ea6-4c35-bf7f-c2f06384c826/______2_.jpg');
+                    }});
+            taOptions.toolbar[1].push('customInsertImage');
+            // console.log(taOptions);
             return taOptions; // whatever you return will be the taOptions
         }]);
     $ocLazyLoadProvider.config({
