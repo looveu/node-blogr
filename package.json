@@ -12,8 +12,6 @@
   "dependencies": {
     "aliyun-sdk": "^1.5.11",
     "bcrypt": "0.8.5",
-    "bunyan": "1.4.0",
-    "bunyan-middleware": "0.1.0",
     "compression": "^1.5.2",
     "compute-cluster": "0.0.9",
     "connect-memcached": "^0.1.0",

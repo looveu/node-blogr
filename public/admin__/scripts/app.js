@@ -163,7 +163,22 @@ angular
           }
         }
       })
-      
+      // QueryDocumentCtr
+      .state('dashboard.documentQuery',{
+        url:'/document/query',
+        controller: 'QueryDocumentCtr',
+        templateUrl:'views/pages/queryDocument.html',
+        resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:[
+              'scripts/controllers/queryDocument.js'
+              ]
+            })
+          }
+        }
+      })
       
       ////
   //     .state('dashboard.form',{
@@ -174,10 +189,10 @@ angular
   //       templateUrl:'views/pages/blank.html',
   //       url:'/blank'
   //   })
-  //     .state('login',{
-  //       templateUrl:'views/pages/login.html',
-  //       url:'/login'
-  //   })
+      .state('login',{
+        templateUrl:'views/pages/login.html',
+        url:'/login'
+      })
       .state('dashboard.chart',{
         templateUrl:'views/chart.html',
         url:'/chart',

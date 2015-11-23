@@ -23,7 +23,7 @@ angular.module('sbAdminApp')
 
     $scope.docSave = function () {
       // console.log($scope.cate);
-      var cate = $scope.cate._id;
+      var cate = $scope.cate.title;
       var content = $scope.docContent.replace(/\<link.*?\<\/link\>/ig, '')
         .replace(/\<script.*?\<\/script\>/ig, '').replace(/\<style.*?\<\/style\>/ig, '');
       var title = $scope.title;
