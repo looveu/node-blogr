@@ -14,8 +14,6 @@
     "bcrypt": "0.8.5",
     "compression": "^1.5.2",
     "compute-cluster": "0.0.9",
-    "connect-memcached": "^0.1.0",
-    "connect-ocs": "^0.1.2",
     "dust-makara-helpers": "^4.0.1",
     "eventproxy": "^0.3.4",
     "express": "^4.12.2",

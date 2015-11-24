@@ -128,8 +128,7 @@ accountSchema.methods.comparePassword = function (candidatePassword, cb) {
 
 // Remember Me implementation helper method
 accountSchema.methods.generateRandomToken = function() {
-    var user = this,
-        chars = '-!abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890',
+    var chars = '-!abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890',
         token = (Date.now()).toString(36) + '_';
     for (var x = 0; x < 32; x++) {
         var i = Math.floor(Math.random() * 62);
