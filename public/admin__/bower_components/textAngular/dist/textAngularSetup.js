@@ -752,7 +752,7 @@ angular.module('textAngularSetup', [])
 				/* istanbul ignore else: if it's invalid don't worry - though probably should show some kind of error message */
 				if(videoId){
 					// create the embed link
-					var urlLink = "https://www.youtube.com/embed/" + videoId;
+					var urlLink = "https://insertImagewww.youtube.com/embed/" + videoId;
 					// create the HTML
 					// for all options see: http://stackoverflow.com/questions/2068344/how-do-i-get-a-youtube-video-thumbnail-from-the-youtube-api
 					// maxresdefault.jpg seems to be undefined on some.

@@ -22,8 +22,5 @@ module.exports = new Schema({
 	tags: {
 		type: Array,
 		required: true
-	},
-	author: {
-		type: Schema.Types.ObjectId
 	}
 });
