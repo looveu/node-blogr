@@ -21,9 +21,9 @@ module.exports = function (router) {
 			return res.ok(rst);
 		});
 	});
-	router.post('/del', function (req, res) {
+	// router.post('/del', function (req, res) {
 		
-	});
+	// });
 	router.post('/upload', function (req, res) {
 		// console.dir(req.files.file);
 		if(!req.files.file){
