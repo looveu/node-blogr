@@ -1,0 +1,44 @@
+<div class="container-fluid" style="padding-bottom:20px;">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">编辑文档</h1>
+		</div>
+		<!-- /.col-lg-12 -->
+	</div>
+	<!-- /.row -->
+	<div class="form-group">
+		<input type="text" class="form-control" id="title" ng-model="title" placeholder="文章标题">
+	</div>
+	<div class="form-group">
+		<select class="form-control" ng-model="cate" ng-options="cate.title for cate in cates track by cate._id">
+		</select>
+	</div>
+	<div class="form-group">
+		<div text-angular ng-model="docContent"></div>
+	</div>
+	<div class="form-group">
+		<input type="text" class="form-control" ng-model="tags" placeholder="标签">
+	</div>
+	<div class="form-group">
+		<button type="button" class="btn btn-primary btn-lg pull-right" ng-click="docSave()">保存</button>
+	</div>
+</div>
+
+
+<script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">I'm a modal!</h3>
+        </div>
+        <div class="modal-body">
+            <ul>
+                <li ng-repeat="item in items">
+                    <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected: <b>{{ selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>

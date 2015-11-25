@@ -35,9 +35,7 @@ module.exports = function (router) {
 		});
 	});
 	router.post('/update', function (req, res) {
-		Doc.findByIdAndUpdate(req.body.id, req.body, {
-			new: true
-		}, function(error, ca){
+		Doc.findByIdAndUpdate(req.body._id, req.body, function(error, ca){
 			if(error){
 				return res.error(error);
 			}

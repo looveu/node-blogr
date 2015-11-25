@@ -8,13 +8,16 @@
  */
 angular.module('sbAdminApp')
   .controller('NewCategoryCtr', function ($scope, $position, $http, $log) {
-
-    $scope.addCate = function () {
-      $http.post('/api/site/category/new', {
+    $scope.addCate = function () {      
+      var newCate = {
         title: $scope.title,
         level: 1
-      }).then(function (res) {
-        $log.debug(res);
+      };
+      if($scope.cate){
+        newCate.level = 2;
+        newCate.belong = $scope.cate.title;
+      }
+      $http.post('/api/site/category/new', newCate).then(function (res) {
         if(res.data.status === 'OK'){
           alert('保存成功');
         }else{
@@ -24,6 +27,18 @@ angular.module('sbAdminApp')
         alert('请求出错请稍候再试');
       });
     };
+    $http.get('/api/site/category/query')
+      .then(function (res) {
+        // $log.debug(res);
+        if (res.data.status === 'OK') {
+          $scope.cates = res.data.data;
+        } else {
+          alert('请求出错请稍候再试');
+        }
+      }, function (error) {
+        alert('请求出错请稍候再试');
+      });
+
     // $scope.htmlcontent = '<h1>hello</h1>';
     // $scope.disabled = false;
     // $scope.taOptions.toolbar = [

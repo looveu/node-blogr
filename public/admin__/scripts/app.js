@@ -175,6 +175,21 @@ angular
           }
         }
       })
+      .state('dashboard.documentEdit',{
+        url:'/document/edit/:doc_id',
+        controller: 'EditDocumentCtr',
+        templateUrl:'views/pages/editDocument.html',
+        resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:[
+              'scripts/controllers/editDocument.js'
+              ]
+            })
+          }
+        }
+      })
       .state('dashboard.categoryNew',{
         url:'/category/new',
         controller: 'NewCategoryCtr',

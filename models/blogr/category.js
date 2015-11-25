@@ -8,14 +8,14 @@ var Schema = mongoose.Schema;
 module.exports = new Schema({
 	title: {
 		type: String,
-		required: true,
-		unique: true
+		required: true
 	},
 	level: {
-		type: Number
+		type: Number,
+		default: 1
 	},
 	belong: {
-		type: Schema.Types.ObjectId
+		type: String
 	},
 	sort: {
 		type: Number,
