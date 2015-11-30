@@ -1,5 +1,68 @@
 {>"layouts/master" /}
 
+{<head}
+    <meta name="description" content="中钰招标">
+    <meta name="keywords" content="中钰招标">
+    <link href="./staticiles/reset.pack.css" rel="stylesheet">
+    <link href="./staticiles/common.css" rel="stylesheet">
+    <link href="./staticiles/page.css" rel="stylesheet">
+    <script src="./staticiles/jquery.min.js"></script>
+    <script src="./staticiles/common.js"></script>
+    <!--[if lt IE 9]>
+        <link href="css/css3.css" rel="stylesheet" />
+        <script src="js/html5.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        footer{border-top:none;}
+    </style>
+    <script src="./staticiles/jquery.bannerSwitch.js"></script>
+    <script type="text/javascript">
+    <!--
+        $(function(){
+            $(".indexBanner").bannerSwitch({
+                time : 5000,
+                animation : 1000,
+                pause : ".pause"
+            });
+            $(".indexLink").hover(function(){
+                $(this).find("p.img").css("opacity","1");
+            },function(){
+                $(this).find("p.img").css("opacity","0.5");
+            });
+            $(".indexLink").click(function(){
+                $(".indexList").stop(true,true).animate({"opacity":"hide","height":"0"},"normal");
+                $(".indexList").eq($(this).index(".indexLink")).stop(true,true).animate({"opacity":"show","height":"402px"},"fast");
+            });
+            $(".indexList").hover(function(){
+                
+            },function(){
+                $(this).animate({"opacity":"hide","height":"0"},"normal");
+                $(".indexLink01").animate({"bottom":"190px"},"normal");
+                $(".indexLink02").animate({"bottom":"100px"},"normal");
+                $(".indexLink03").animate({"bottom":"10px"},"normal");
+            });
+            /*$(".indexList:first").animate({"opacity":"show","height":"312px"},"normal");*/
+    
+            $(".indexLink01").click(function(){
+                $(".indexLink02").animate({"bottom":"100px"},"normal");
+                $(".indexLink03").animate({"bottom":"10px"},"normal");
+            });
+            $(".indexLink02").click(function(){
+                $(".indexLink01").animate({"bottom":"510px"},"normal");
+                $(".indexLink03").animate({"bottom":"10px"},"normal");
+            });
+            $(".indexLink03").click(function(){
+                $(".indexLink01").animate({"bottom":"510px"},"normal");
+                $(".indexLink02").animate({"bottom":"420px"},"normal");
+            });
+        });
+    //-->
+    </script>
+    
+    <title>中钰招标</title>
+{/head}
+
+
 {<body}
     <h1>{@pre type="content" key="greeting"/}</h1>
 {/body}

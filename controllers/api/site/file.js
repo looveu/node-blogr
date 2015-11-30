@@ -3,14 +3,13 @@
 var app = require('../../../index');
 var _ = require('lodash');
 var path = require('path');
-var fs = require('fs');
+var Promise = require("bluebird");
+var fs = Promise.promisifyAll(require("fs"));
 
 module.exports = function (router) {
 	router.get('/query', function (req, res) {
-		fs.readdir(path.join(__dirname ,'../../../public/upload/'), function(error, files){
-			if(error){
-				return res.error(error);
-			}
+		fs.readdirAsync(path.join(__dirname ,'../../../public/upload/'))
+		.then(function(files){
 			var rst = _.chain(files)
 			.map(function(file){
 				return '/upload/'+file;
@@ -19,6 +18,10 @@ module.exports = function (router) {
 				return /(jpg|jpeg|png|gif)$/ig.test(file.toLowerCase());
 			});
 			return res.ok(rst);
+		}).catch(function(error){
+			if(error){
+				return res.error(error);
+			}
 		});
 	});
 	// router.post('/del', function (req, res) {
@@ -31,13 +34,9 @@ module.exports = function (router) {
 		}
 		var file = req.files.file;
 		// var filename = file.path[file.path.length-1];
-		
-		
 		// var fs = require('fs');
 		var readStream = fs.createReadStream(file.path);
 		var writeStream = fs.createWriteStream(path.join(__dirname ,'../../../public/upload/',file.name));
-		
-		
 		readStream.pipe(writeStream);
 		// readStream.on('data', function(chunk) { // 当有数据流出时，写入数据
 		// 	writeStream.write(chunk);

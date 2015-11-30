@@ -27,7 +27,7 @@ angular.module('sbAdminApp')
         alert('请求出错请稍候再试');
       });
     };
-    $http.get('/api/site/category/query')
+    $http.get('/api/site/category/query?level=1')
       .then(function (res) {
         // $log.debug(res);
         if (res.data.status === 'OK') {

@@ -1,21 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>{+title /}</title>
-    
-        <link rel="stylesheet" href="/css/app.css">
-    
-    </head>
-    <body>
+<!-- saved from url=(0020)http://www.siud.com/ -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="中钰招标">
+<meta name="keywords" content="中钰招标">
+<link href="./staticiles/reset.pack.css" rel="stylesheet">
+<link href="./staticiles/common.css" rel="stylesheet">
+<link href="./staticiles/page.css" rel="stylesheet">
+<script src="./staticiles/jquery.min.js"></script>
+<script src="./staticiles/common.js"></script>
+<!--[if lt IE 9]>
+	<link href="css/css3.css" rel="stylesheet" />
+	<script src="js/html5.js"></script>
+<![endif]-->
+<style type="text/css">
+	footer{border-top:none;}
+</style>
+<script src="./staticiles/jquery.bannerSwitch.js"></script>
+<script type="text/javascript">
+<!--
+	$(function(){
+		$(".indexBanner").bannerSwitch({
+			time : 5000,
+			animation : 1000,
+			pause : ".pause"
+		});
+		$(".indexLink").hover(function(){
+			$(this).find("p.img").css("opacity","1");
+		},function(){
+			$(this).find("p.img").css("opacity","0.5");
+		});
+		$(".indexLink").click(function(){
+			$(".indexList").stop(true,true).animate({"opacity":"hide","height":"0"},"normal");
+			$(".indexList").eq($(this).index(".indexLink")).stop(true,true).animate({"opacity":"show","height":"402px"},"fast");
+		});
+		$(".indexList").hover(function(){
+			
+		},function(){
+			$(this).animate({"opacity":"hide","height":"0"},"normal");
+			$(".indexLink01").animate({"bottom":"190px"},"normal");
+			$(".indexLink02").animate({"bottom":"100px"},"normal");
+			$(".indexLink03").animate({"bottom":"10px"},"normal");
+		});
+		/*$(".indexList:first").animate({"opacity":"show","height":"312px"},"normal");*/
 
-        <div id="wrapper">
-            {+body /}
-        </div>
+		$(".indexLink01").click(function(){
+			$(".indexLink02").animate({"bottom":"100px"},"normal");
+			$(".indexLink03").animate({"bottom":"10px"},"normal");
+		});
+		$(".indexLink02").click(function(){
+			$(".indexLink01").animate({"bottom":"510px"},"normal");
+			$(".indexLink03").animate({"bottom":"10px"},"normal");
+		});
+		$(".indexLink03").click(function(){
+			$(".indexLink01").animate({"bottom":"510px"},"normal");
+			$(".indexLink02").animate({"bottom":"420px"},"normal");
+		});
+	});
+//-->
+</script>
 
-        {! // <script src="/socket.io/socket.io.js"></script> !}
-        {! //<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> !}
-        <script src="/js/app.js"></script>
-    
-    </body>
-</html>
+<title>中钰招标</title>
+</head>
+
+<body class="indexBg">
+
+<header class="wrap clearfix">
+	<h1 class="logo"><a href="#"><img src="./staticiles/logo.png" height="41" border="0" alt="中钰招标"></a></h1>
+	<div class="headerRt">
+		<div class="headerLan">
+			<a href="#">简体</a><span>|</span><a href="#">繁體</a><span>|</span><a href="#">English</a>
+		</div>
+		<nav class="clearfix">
+			<ul>
+				<li><a href="#" class="current"><span>首 页</span></a></li>
+				<li><a href="#"><span>走进中钰</span></a>
+					<dl style="margin-left: -147px; top: -182px;">
+						<dd><a href="#">公司概况</a></dd>
+					<!-- 	<dd><a href="#">主席致辞</a></dd>
+						<dd><a href="#">董事会成员 | 高级管理层</a></dd>
+						<dd><a href="#">企业文化</a></dd>
+						<dd><a href="#">大事记</a></dd> -->
+						<dd><a href="#">加入我们</a></dd>
+						<dd><a href="#">联系我们</a></dd>
+					</dl>
+				</li>
+				<li><a href="#"><span>企业管治</span></a>
+					<dl style="margin-left: -30px; top: -156px;">
+						<dd><a href="#">企业管制</a></dd>
+						<!-- <dd><a href="#">董事委员会</a></dd>
+						<dd><a href="#">股东提名候选董事程序</a></dd>
+						<dd><a href="#">股东通讯政策</a></dd>
+						<dd><a href="#">董事名单与其角色和职能</a></dd> -->
+						<dd><a href="#">组织章程大纲及细则</a></dd>
+					</dl>
+				</li>
+				<li><a href="#"><span>投资者关系</span></a>
+					<dl style="margin-left: 48px; width: 220px; top: -234px;">
+						<dd><a href="#">公司资料</a></dd>
+						<dd><a href="#">公告及通告</a></dd>
+					<!-- 	<dd><a href="#" target="_blank">公告（补发已遗失的股份证明书）</a></dd>
+						<dd><a href="#">通函</a></dd>
+						<dd><a href="#">证劵变动月报表</a></dd>
+						<dd><a href="#">新闻稿</a></dd>
+						<dd><a href="#">财务数据及分析</a></dd>
+						<dd><a href="#">财务报告</a></dd>
+						<dd><a href="#">股价</a></dd> -->
+					</dl>
+				</li>
+				<li><a href="#"><span>新闻中心</span></a>
+					<dl style="margin-left: 180px; top: -52px;">
+						<dd><a href="#">公司新闻</a></dd>
+						<dd><a href="#">项目新闻</a></dd>
+					</dl>
+				</li>
+				<li><a href="#"><span>产品与服务</span></a>
+					<dl style="margin-left: 288px; top: -78px;">
+						<dd><a href="#">项目信息</a></dd>
+						<!-- <dd><a href="#">城开会</a></dd>
+						<dd><a href="#">优享家</a></dd> -->
+					</dl>
+				</li>
+				<li class="last"><a href="#" target="_blank"><span>联系我们</span></a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<section class="index wrap">
+	<div class="indexTop">
+		<div class="indexBanner">
+			<ul>
+
+                
+                        <li style="display: list-item; opacity: 0.492146;"><img src="./staticiles/41007206329.jpg" width="980" height="550" alt="去LOGO1"></li>
+                    
+                        <li style="display: none;"><img src="./staticiles/41008015156.jpg" width="980" height="550" alt="去LOGO2"></li>
+                    
+                        <li style="display: list-item; opacity: 0.507854;"><img src="./staticiles/41009332472.jpg" width="980" height="550" alt="去LOGO3"></li>
+                    
+			</ul>
+			<dl>
+                
+                        <dd class="current">1</dd>
+                    
+                        <dd class="">2</dd>
+                    
+                        <dd class="">3</dd>
+                    
+
+			</dl>
+			<span class="pause"></span>
+		</div>
+	</div>
+</section>
+<script>document.write(unescape('%3Cdiv%20style%3D%22display%3Anone%22%3E'));</script><div style="display:none"> <div class="bm lk"> <div id="category_lk" class="bm_c ptm"><ul class="x mbm cl"> <li><a href="#">贵族宝贝</a></li> <li><a href="#" target="_blank" title="上海桑拿">上海桑拿</a></li> <li><a href="#" target="_blank" title="上海龙凤">上海龙凤</a></li> <li><a href="#" target="_blank" title="上海419">上海419</a></li> <li><a href="#" target="_blank" title="爱上海">爱上海</a></li> <li><a href="#" target="_blank" title="千花坊">千花坊</a></li> </ul> </div> </div> <script>document.write(unescape('%3C/div%3E'));</script></div><footer>
+	<div class="wrap clearfix">
+		<div class="footerLink">
+			<ul class="clearfix">
+				<li class="first">
+					<dl>
+						<dt>上实品牌</dt>
+						<dd><a href="#" target="_blank">-中钰</a></dd>
+						<dd><a href="#" target="_blank">-中钰</a></dd>
+					</dl>
+					<span class="line"></span>
+				</li>
+				<li>
+					<dl>
+						<dt>服务支持</dt>
+						<dd><a href="#">-城开会</a></dd>
+						<dd><a href="#">-优享家</a></dd>
+					</dl>
+					<span class="line"></span>
+				</li>
+				<li>
+					<dl>
+						<dt>关于我们</dt>
+						<dd><a href="#">-公司概况</a></dd>
+						<dd><a href="#">-企业文化</a></dd>
+					</dl>
+					<span class="line"></span>
+				</li>
+				<li>
+					<dl>
+						<dt>关注我们</dt>
+						<dd><a href="#" target="_blank" class="weibo">微博</a></dd>
+						<dd><a href="#" target="_blank" class="weibo">微信</a></dd>
+					</dl>
+					<span class="line"></span>
+				</li>
+				<li>
+					<dl>
+						<dt>网站链接</dt>
+						<dd><a href="#">-网站地图</a></dd>
+						<dd><a href="#">-法律申明</a></dd>
+					</dl>
+					<span class="line" style="background-color: rgb(192, 192, 192);"></span>
+				</li>
+			</ul>
+		</div>
+		<div class="footerTxt">
+			<div class="search">
+                <form action="#">
+				    <input name="key" id="s_sea" type="text" class="text" onfocus="_searchFocus();" onblur="_searchBlur();"><input type="submit" class="submit" value="搜 索">
+                    <script>
+                        $(function () {
+                            $(".submit").click(function () {
+                                if ($("#s_sea").val() == "") { return false; }
+                            });
+                        });
+                    </script>
+			    </form>
+            </div>
+			<p>版权所有©2015</p>
+			<p>中钰招标代理(北京)有限公司</p>
+			<p>京ICP备000000000号</p>
+		</div>
+	</div>
+</footer>
+<!--[if IE 6]>
+	<script src="/js/DD_belatedPNG_0.0.8a-min.js" ></script>
+	<script>
+	DD_belatedPNG.fix('.logo img,.indexLink img,.indexList img,.aside,.innerBanner span.icon');
+	</script>
+<![endif]-->
+
+</body></html>

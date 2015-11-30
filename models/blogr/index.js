@@ -2,6 +2,7 @@
 
 // var app=  require('../../index');
 var mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
 var timestamps = require('mongoose-timestamp');
 
 // 获取数据库连接配置
