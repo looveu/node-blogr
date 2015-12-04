@@ -22,6 +22,10 @@ module.exports = function (router) {
                     });
                     return m._doc;
                 });
+                // var menuMap = _.groupBy(sonMenu, function(n){
+                //     return n.belong
+                // });
+                req.debuglog('menuMap  :  ',menuMap);
                 res.render('index', {
                     navs: menuMap
                 });
