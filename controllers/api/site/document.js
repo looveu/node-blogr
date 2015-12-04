@@ -5,7 +5,7 @@ var _ = require('lodash');
 var nm29DataBase = require('../../../models/blogr/index');
 var Doc = nm29DataBase.document;
 var xss = require('xss');
-var xssFilters = require('xss-filters');
+// var xssFilters = require('xss-filters');
 
 module.exports = function (router) {
 	router.post('/new', function (req, res) {
